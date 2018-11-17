@@ -64,7 +64,7 @@ var newtemp = React.createElement(
     null,
     user.name ? user.name : "Anonymous"
   ),
-  user.age >= 18 && React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     'p',
     null,
     'Age: ',
