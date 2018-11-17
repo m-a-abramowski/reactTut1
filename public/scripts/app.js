@@ -2,18 +2,23 @@
 
 console.log('App.js is running.');
 
+var app = {
+  title: 'Indecision',
+  subtitle: 'subtitle'
+};
+
 var template = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Indecision'
+    app.title
   ),
   React.createElement(
     'p',
     null,
-    'This is some info'
+    app.subtitle
   ),
   React.createElement(
     'ul',
@@ -31,27 +36,35 @@ var template = React.createElement(
   )
 );
 
+var user = {
+  name: 'Maciek',
+  age: 29,
+  location: 'Warsaw'
+};
+
 var newtemp = React.createElement(
   'div',
   null,
   React.createElement(
     'h1',
     null,
-    'Maciek'
+    user.name.toUpperCase() + '!'
   ),
   React.createElement(
     'p',
     null,
-    'Age: 29'
+    'Age: ',
+    user.age
   ),
   React.createElement(
     'p',
     null,
-    'Location: Warsaw'
+    'Location: ',
+    user.location
   )
 );
 
 var appRoot = document.getElementById('app');
 
 // ReactDOM.render(template, appRoot);
-ReactDOM.render(newtemp, appRoot);
+ReactDOM.render(template, appRoot);
