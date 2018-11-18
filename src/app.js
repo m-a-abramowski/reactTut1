@@ -1,14 +1,21 @@
 console.log('App.js is running.');
 
+//Conditional rendering methods:
+//if statements
+//ternary operators
+//logical and operator
+
 var app = {
   title: 'Indecision',
-  subtitle: 'subtitle'
+  subtitle: 'subtitle',
+  options: ['One', 'Two']
 }
 
 var template = (
 <div>
   <h1>{app.title}</h1>
-  <p>{app.subtitle}</p>
+  {app.subtitle && <p>{app.subtitle}</p>}
+  <p>{(app.options.length > 0) ? 'Here are your options' : "No options"}</p>
   <ul>
     <li>Item one</li>
     <li>Item two</li>
@@ -46,4 +53,4 @@ var newtemp = (
 var appRoot = document.getElementById('app');
 
 // ReactDOM.render(template, appRoot);
-ReactDOM.render(newtemp, appRoot);
+ReactDOM.render(template, appRoot);
